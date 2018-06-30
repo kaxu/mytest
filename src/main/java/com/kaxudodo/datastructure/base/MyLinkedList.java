@@ -1,6 +1,4 @@
-package com.kaxudodo.staticclass;
-
-import com.sun.xml.internal.ws.api.pipe.Tube;
+package com.kaxudodo.datastructure.base;
 
 import java.util.ConcurrentModificationException;
 import java.util.Iterator;

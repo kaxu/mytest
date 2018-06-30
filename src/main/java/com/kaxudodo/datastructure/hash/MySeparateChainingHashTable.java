@@ -1,4 +1,4 @@
-package com.kaxudodo.hash;
+package com.kaxudodo.datastructure.hash;
 
 import java.util.LinkedList;
 import java.util.List;

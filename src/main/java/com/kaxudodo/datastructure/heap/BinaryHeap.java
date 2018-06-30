@@ -1,4 +1,4 @@
-package com.kaxudodo.mysort;
+package com.kaxudodo.datastructure.heap;
 
 import java.util.Arrays;
 
@@ -17,7 +17,15 @@ public class BinaryHeap<AnyType extends Comparable<? super AnyType>> {
     }
 
     public void enlargeArray(int newSize){
+        if(newSize < array.length )
+        {
+            newSize = array.length*2+1;
+        }
+        array = Arrays.copyOf(array, newSize);
+    }
 
+    public int getCurrentSize() {
+        return currentSize;
     }
 
     public AnyType[] getArray(){
@@ -54,6 +62,10 @@ public class BinaryHeap<AnyType extends Comparable<? super AnyType>> {
         array[1] = array[currentSize--];
         percolateDown(1);
         return minItem;
+    }
+
+    public void setZeroNull(){
+        array[0]=null;
     }
 
     public AnyType findMin(){

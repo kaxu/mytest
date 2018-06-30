@@ -1,4 +1,4 @@
-package com.kaxudodo.staticclass;
+package com.kaxudodo.datastructure.base;
 
 /**
  * Created by aaron on 16/9/6.

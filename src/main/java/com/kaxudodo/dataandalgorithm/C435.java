@@ -1,7 +1,5 @@
 package com.kaxudodo.dataandalgorithm;
 
-import com.kaxudodo.staticclass.MyAvlTree;
-
 /**
  * Created by aaron on 16/9/8.
  */

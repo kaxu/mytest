@@ -1,6 +1,6 @@
 package com.kaxudodo.dataandalgorithm;
 
-import com.kaxudodo.staticclass.MyStack;
+import com.kaxudodo.datastructure.base.MyStack;
 import com.kaxudodo.utils.RegexUtils;
 
 import java.util.Arrays;

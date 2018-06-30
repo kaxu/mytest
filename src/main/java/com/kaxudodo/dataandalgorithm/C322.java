@@ -1,6 +1,6 @@
 package com.kaxudodo.dataandalgorithm;
 
-import com.kaxudodo.staticclass.MyStack;
+import com.kaxudodo.datastructure.base.MyStack;
 
 /**
  * Created by aaron on 16/8/19.

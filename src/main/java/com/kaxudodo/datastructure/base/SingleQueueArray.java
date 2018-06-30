@@ -1,4 +1,4 @@
-package com.kaxudodo.staticclass;
+package com.kaxudodo.datastructure.base;
 
 import java.util.*;
 public class SingleQueueArray<AnyType>

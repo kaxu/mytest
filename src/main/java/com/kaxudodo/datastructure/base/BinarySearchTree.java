@@ -1,11 +1,6 @@
-package com.kaxudodo.staticclass;
+package com.kaxudodo.datastructure.base;
 
-import sun.security.ssl.SSLContextImpl;
-
-import java.io.PipedReader;
-import java.math.BigDecimal;
 import java.nio.BufferUnderflowException;
-import java.util.Comparator;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 

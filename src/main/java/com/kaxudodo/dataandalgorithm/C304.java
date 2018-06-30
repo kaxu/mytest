@@ -1,6 +1,6 @@
 package com.kaxudodo.dataandalgorithm;
 
-import com.kaxudodo.staticclass.MyLinkedList;
+import com.kaxudodo.datastructure.base.MyLinkedList;
 
 import java.util.Iterator;
 
