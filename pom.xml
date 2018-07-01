@@ -64,6 +64,11 @@
         </dependency>
         <dependency>
             <groupId>io.reactivex</groupId>
+            <artifactId>rxnetty-http</artifactId>
+            <version>0.5.3-rc.1</version>
+        </dependency>
+        <dependency>
+            <groupId>io.reactivex</groupId>
             <artifactId>rxnetty-common</artifactId>
             <version>0.5.3-rc.1</version>
         </dependency>
