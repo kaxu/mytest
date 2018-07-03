@@ -1,4 +1,4 @@
-package com.kaxudodo.reactivex.toptobottom.netty;
+package com.kaxudodo.reactivex.toptobottom.serverside;
 
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.socket.SocketChannel;

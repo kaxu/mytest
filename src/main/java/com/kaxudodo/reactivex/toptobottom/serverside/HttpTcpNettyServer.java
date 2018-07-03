@@ -1,4 +1,4 @@
-package com.kaxudodo.reactivex.toptobottom.netty;
+package com.kaxudodo.reactivex.toptobottom.serverside;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelOption;

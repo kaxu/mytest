@@ -1,4 +1,4 @@
-package com.kaxudodo.reactivex.toptobottom.netty;
+package com.kaxudodo.reactivex.toptobottom.serverside;
 
 import io.netty.buffer.Unpooled;
 import io.netty.channel.*;
