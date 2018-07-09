@@ -11,6 +11,18 @@ import java.util.List;
  */
 public class MyHashFamily implements HashFamily{
 
+    private final int d ;
+
+    private final static int number = 2;
+
+    MyHashFamily(){
+        this(number);
+    }
+
+    MyHashFamily(int _d){
+        d = _d;
+    }
+
     private List<HashParam> list ;
 
     @Override
@@ -27,12 +39,15 @@ public class MyHashFamily implements HashFamily{
 
     @Override
     public void generateNewFunctions() {
-        HashParam hashParam = new HashParam();
-        hashParam.setA(RandomUtils.nextInt(1,20));
-        hashParam.setB(RandomUtils.nextInt(1,20));
-        if(list == null)
-            list = new ArrayList<>();
-        list.add(hashParam);
+        list = null;
+        list = new ArrayList<>();
+        for (int i = 0; i < d; i++) {
+            HashParam hashParam = new HashParam();
+            hashParam.setA(RandomUtils.nextInt(1,20));
+            hashParam.setB(RandomUtils.nextInt(1,20));
+            list.add(hashParam);
+        }
+
     }
 
 
