@@ -55,6 +55,13 @@ public class BinomialQueue<AnyType extends Comparable<? super AnyType>> {
     public void merge(BinomialQueue<AnyType> rhs){
         if(this == rhs)
             return;
+
+        //较小的队列总是被较大的队列合并
+        if(currentSize<rhs.currentSize){
+            rhs.merge(this);
+            return;
+        }
+
         currentSize += rhs.currentSize;
 
         if(currentSize > capacity()){
@@ -70,6 +77,9 @@ public class BinomialQueue<AnyType extends Comparable<? super AnyType>> {
             int whichCase = t1 == null ? 0:1;
             whichCase += t2 == null ? 0:2;
             whichCase += carry == null ? 0:4;
+
+            if(carry==null && t2 == null)
+                break;
 
             switch (whichCase){
                 case 0:/* no trees */

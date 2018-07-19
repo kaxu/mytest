@@ -38,5 +38,6 @@ public class InsertSort {
 //        InsertSort.myInsertSort(numbers);
         InsertSort.myInsertSort(numbers,3,8);
         Arrays.asList(numbers).stream().forEach(e-> System.out.print(e));
+
     }
 }
