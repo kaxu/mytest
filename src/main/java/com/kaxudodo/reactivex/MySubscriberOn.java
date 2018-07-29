@@ -34,9 +34,20 @@ public class MySubscriberOn {
         });
     }
 
+    public Observable<String> simple2() {
+        return Observable.create(subscriber -> {
+            log("Subscribed");
+            for (int i = 0; i < 50000; i++) {
+                subscriber.onNext("A"+i);
+            }
+
+            subscriber.onCompleted();
+        });
+    }
+
     public void testSubscribe(){
         log("Starting");
-        final Observable<String> obs = simple();
+        final Observable<String> obs = simple2();
         log("Created");
         final Observable<String> obs2 = obs
                 .map(x -> x)
@@ -142,13 +153,13 @@ public class MySubscriberOn {
         totalPrice.subscribe(this::log);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         MySubscriberOn mySubscriberOn = new MySubscriberOn();
 //        mySubscriberOn.testSubscribe();
 //        System.out.println("---------------");
 //        mySubscriberOn.testSubscribeOn();
-        mySubscriberOn.testSubscribeOnGroceriesConcurrently2();
-
+        mySubscriberOn.testSubscribe();
+        Thread.sleep(3000);
     }
 
 }

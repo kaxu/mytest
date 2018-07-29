@@ -40,8 +40,8 @@ public class JoinTest {
                 System.out.println("t3");
             }
         });
-        t3.start();
         t2.start();
+        t3.start();
         t1.start();
     }
 
