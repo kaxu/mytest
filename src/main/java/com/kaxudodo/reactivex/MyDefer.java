@@ -3,6 +3,7 @@ package com.kaxudodo.reactivex;
 import org.apache.commons.lang3.RandomUtils;
 import rx.Observable;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,13 +13,13 @@ import java.util.List;
 public class MyDefer {
 
     public static List<Integer> getRandomList(){
-        System.out.println("begin to init");
+        System.out.println("into getRandomList");
         List<Integer> randomList = new ArrayList<>();
         randomList.add(RandomUtils.nextInt(1,4));
         randomList.add(RandomUtils.nextInt(1,4));
         randomList.add(RandomUtils.nextInt(1,4));
         randomList.add(RandomUtils.nextInt(1,4));
-        System.out.println("end");
+//        System.out.println("end");
         return randomList;
     }
 
