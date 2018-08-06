@@ -13,7 +13,7 @@ import static io.netty.util.CharsetUtil.UTF_8;
 public class ReactiveUtil {
 
     public static void log(Object msg) {
-        System.out.println(Thread.currentThread().getName() + ": " + msg);
+        System.out.println(System.currentTimeMillis()+ "   "+Thread.currentThread().getName() + ": " + msg );
     }
 
     public static void log(Object label,long start) {
