@@ -109,14 +109,9 @@ public class MyObserveOn {
 
     public static void main(String[] args) {
         MyObserveOn myObserveOn = new MyObserveOn();
-//        myObserveOn.test3();
+        myObserveOn.test1();
 
-        int a = 48271;
-        int m = 2147483647;
-        int q = m/a;
-        int r = m %a ;
-        System.out.println(q);
-        System.out.println(r);
+
     }
 
 

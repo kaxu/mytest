@@ -2,6 +2,7 @@ package com.kaxudodo.reactivex;
 
 import rx.Observable;
 
+import java.math.BigDecimal;
 import java.time.Duration;
 import java.util.List;
 import java.util.Random;
@@ -11,6 +12,7 @@ import java.util.stream.Collectors;
 import static com.kaxudodo.reactivex.ReactiveUtil.log;
 import static java.util.concurrent.TimeUnit.MILLISECONDS;
 import static java.util.concurrent.TimeUnit.SECONDS;
+import static rx.Observable.empty;
 import static rx.Observable.just;
 
 /**
@@ -90,11 +92,38 @@ public class FlowControlDemo {
                 .interval(1, SECONDS)
                 .map(x -> Duration.ofMillis(100));
         insideBusinessHours.subscribe(x -> log(x));
+        Observable<Integer> upstream = null;
+        //这里用到了buffer一个很复杂的功能,可以提供开始和结束触发的事件Observable
+        Observable<List<Integer>> samples = upstream .buffer(
+                insideBusinessHours,
+                duration -> empty() .delay(duration.toMillis(), MILLISECONDS));
+    }
+
+    Observable<BigDecimal> pricesOf(String ticker) {
+        return Observable .interval(50, MILLISECONDS)
+                .flatMap(this::randomDelay)
+                .map(this::randomStockPrice)
+                .map(BigDecimal::valueOf);
+    }
+
+    Observable<Long> randomDelay(long x) {
+        return Observable.just(x).delay((long) (Math.random() * 100), MILLISECONDS);
+    }
+
+    double randomStockPrice(long x) {
+        return 100 + Math.random() * 10 + (Math.sin(x / 100.0)) * 60.0;
+    }
+
+    public void test8(){
+        pricesOf("test8") .debounce(x -> {
+            boolean goodPrice = x.compareTo(BigDecimal.valueOf(150)) > 0;
+            return Observable .empty() .delay(goodPrice? 10 : 100, MILLISECONDS);
+        }).subscribe(x -> log(x));
     }
 
     public static void main(String[] args) throws InterruptedException {
         FlowControlDemo flowControlDemo = new FlowControlDemo();
-        flowControlDemo.test7();
-        Thread.sleep(5000);
+        flowControlDemo.test8();
+        Thread.sleep(55000);
     }
 }
